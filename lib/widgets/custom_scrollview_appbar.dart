@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:youtubeclone/widgets/customCircular_avatar.dart';
 
 
-
 class CustomScrollViewAppbar extends StatefulWidget {
   const CustomScrollViewAppbar({super.key});
 
@@ -20,15 +19,11 @@ class _CustomScrollViewAppbarState extends State<CustomScrollViewAppbar> {
       backgroundColor: Colors.black,
       //leadingWidth: double.maxFinite,
       leading: Padding(
-        
-        padding: EdgeInsets.only(left: 10, top: 10),
-        child: Image(
-          width: 70,
-          height: 70,
-          image: AssetImage(
-
-            "assets/youtubelogo.png"))
-      ),
+          padding: EdgeInsets.only(left: 10, top: 10),
+          child: Image(
+              width: 70,
+              height: 70,
+              image: AssetImage("assets/youtubelogo.png"))),
       actions: [
         //cast button
         IconButton(
@@ -40,16 +35,20 @@ class _CustomScrollViewAppbarState extends State<CustomScrollViewAppbar> {
           width: 10,
         ),
         //notification button
-        IconButton(onPressed: () {
-          print("cast button pressed");
-        }, icon: Icon(Icons.notifications_outlined)),
+        IconButton(
+            onPressed: () {
+              print("cast button pressed");
+            },
+            icon: Icon(Icons.notifications_outlined)),
         SizedBox(
           width: 10,
         ),
         //search Button
-        IconButton(onPressed: () {
-          print("cast button pressed");
-        }, icon: Icon(Icons.search)),
+        IconButton(
+            onPressed: () {
+              print("cast button pressed");
+            },
+            icon: Icon(Icons.search)),
         SizedBox(
           width: 10,
         ),

@@ -43,7 +43,7 @@ class _VideoCardState extends State<VideoCard> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Youtube Tutorial showing how to create a cu',
+                  'Youtube Tutorial showing how to create a custom video player in Flutter',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16.0,
