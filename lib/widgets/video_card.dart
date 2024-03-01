@@ -29,7 +29,7 @@ class _VideoCardState extends State<VideoCard> {
           ),
         ],
       ),
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -43,16 +43,44 @@ class _VideoCardState extends State<VideoCard> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Youtube Tutorial showing how to create a custom youtube player using the Youtube VideoId',
+                  'Youtube Tutorial showing how to create a cu',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16.0,
                     color: Colors.white,
                   ),
-                  maxLines: 2,
+                  maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 4.0),
+                    Row(
+                      children: [
+                        Text(
+                              "21M views 1yr ago",
+                              style: TextStyle(
+                                color: Colors.grey[600],
+                                fontSize: 14.0,
+                              ),
+                            ),
+                        SizedBox(width: 5,),
+                            Text(
+                              "#Youtube ...",
+                              style: TextStyle(
+                                color: Colors.grey[600],
+                                fontSize: 14.0,
+                              ),
+                            ),
+                            SizedBox(width: 5,),
+                             Text(
+                              "more",
+                              style: TextStyle(
+                                color: ColorsContants.textColor,
+                                fontSize: 14.0,
+                              ),
+                            ),
+                      ],
+                    ),
+                    SizedBox(height: 8.0,),
                 Row(
                   children: [
                     CustomCircularAvatar(
@@ -60,24 +88,20 @@ class _VideoCardState extends State<VideoCard> {
                       imageUrl: "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww", // Placeholder URL
                     ),
                     SizedBox(width: 10),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Kennedy Mutugi",
-                          style: TextStyle(
-                            color: Colors.grey[600],
-                            fontSize: 14.0,
-                          ),
-                        ),
-                        Text(
-                          "1.39M",
-                          style: TextStyle(
-                            color: Colors.grey[600],
-                            fontSize: 14.0,
-                          ),
-                        ),
-                      ],
+                    Text(
+                      "Kennedy",
+                      style: TextStyle(
+                        color: Colors.grey[600],
+                        fontSize: 14.0,
+                      ),
+                    ),
+                    SizedBox(width: 5,),
+                    Text(
+                      "1.39M",
+                      style: TextStyle(
+                        color: Colors.grey[600],
+                        fontSize: 14.0,
+                      ),
                     ),
                     Expanded(child: Container()),
                     InkWell(
@@ -107,6 +131,8 @@ class _VideoCardState extends State<VideoCard> {
                     ),
                   ],
                 ),
+
+                //
               ],
             ),
           ),

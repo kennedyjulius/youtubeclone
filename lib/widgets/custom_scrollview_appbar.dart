@@ -15,7 +15,7 @@ class CustomScrollViewAppbar extends StatefulWidget {
 class _CustomScrollViewAppbarState extends State<CustomScrollViewAppbar> {
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
+    return AppBar(
       //expandedHeight: 80,
       backgroundColor: Colors.black,
       //leadingWidth: double.maxFinite,
