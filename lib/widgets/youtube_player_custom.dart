@@ -24,25 +24,25 @@ class _YoutubePlayerCustomPlayerState extends State<YoutubePlayerCustomPlayer> {
 
   void _onPlayerStateChange() {
     if (_controller.value.playerState == PlayerState.playing) {
-      final currentTime = _controller.value.position.inSeconds;
-      final currentSubtitle = subtitle.firstWhere((subtitle) =>
-          currentTime >= subtitle.start && currentTime <= subtitle.end);
+      // final currentTime = _controller.value.position.inSeconds;
+      // final currentSubtitle = subtitle.firstWhere((subtitle) =>
+      //     currentTime >= subtitle.start && currentTime <= subtitle.end);
 
-      //update the UI with the current subtitle
+      // //update the UI with the current subtitle
 
-      setState(() {
-        subtitleText = currentSubtitle.text;
-      });
+      // setState(() {
+      //   subtitleText = currentSubtitle.text;
+      
     }
   }
 
   //List for custom Subtitle and diplaying duration
 
-  List<Subtitle> subtitle = [
-    Subtitle(start: 2, end: 10, text: "Animated Container Widget In Flutter"),
-    Subtitle(start: 10, end: 200, text: "You can add your custom subtitle"),
-    Subtitle(start: 2, end: 10, text: "Animated Container Widget In Flutter"),
-  ];
+  // List<Subtitle> subtitle = [
+  //   Subtitle(start: 2, end: 10, text: "Animated Container Widget In Flutter"),
+  //   Subtitle(start: 10, end: 200, text: "You can add your custom subtitle"),
+  //   Subtitle(start: 2, end: 10, text: "Animated Container Widget In Flutter"),
+  // ];
 
   String subtitleText = "";
 
@@ -68,29 +68,17 @@ class _YoutubePlayerCustomPlayerState extends State<YoutubePlayerCustomPlayer> {
           ),
           
         ),
-        Align(
-          alignment: Alignment.bottomLeft,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 8, top: 190),
-            child: Text(
-              "The video playing is a Tutorial",
-              style: TextStyle(fontSize: 17, color: Colors.white),
-            ),
-          ),
-        )
+        // Align(
+        //   alignment: Alignment.bottomLeft,
+        //   child: Padding(
+        //     padding: const EdgeInsets.only(left: 8, top: 190),
+        //     child: Text(
+        //       "The video playing is a Tutorial",
+        //       style: TextStyle(fontSize: 17, color: Colors.white),
+        //     ),
+        //   ),
+        // )
       ],
     ));
   }
-}
-
-class Subtitle {
-  final int start;
-  final int end;
-  final String text;
-
-  Subtitle({
-    required this.start,
-    required this.end,
-    required this.text,
-  });
 }

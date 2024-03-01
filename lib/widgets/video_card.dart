@@ -1,7 +1,6 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-// ignore: unused_import
 import 'package:youtubeclone/utils/colors.dart';
 import 'package:youtubeclone/widgets/customCircular_avatar.dart';
 import 'package:youtubeclone/widgets/custom_iconbutton.dart';
@@ -44,53 +43,68 @@ class _VideoCardState extends State<VideoCard> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Youtube Tutorial',
+                  'Youtube Tutorial showing how to create a custom youtube player using the Youtube VideoId',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16.0,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 4.0),
-                Text(
-                  'Kennedy Mutugi • 1.5M views • 1 month ago',
-                  style: TextStyle(
-                    color: Colors.grey[600],
-                    fontSize: 14.0,
-                  ),
-                ),
-                SizedBox(height: 4.0,),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CustomCircularAvatar(radius: 20, imageUrl: "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww"),
-                    SizedBox(width: 10,),
-
-                    Text("1.39M"),
-
-                    Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: ColorsContants.mainBlackColor
+                    CustomCircularAvatar(
+                      radius: 17,
+                      imageUrl: "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww", // Placeholder URL
+                    ),
+                    SizedBox(width: 10),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Kennedy Mutugi",
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                            fontSize: 14.0,
+                          ),
+                        ),
+                        Text(
+                          "1.39M",
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                            fontSize: 14.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Expanded(child: Container()),
+                    InkWell(
+                      borderRadius: BorderRadius.circular(20),
+                      splashColor: Colors.amberAccent,
+                      onTap: () {
+                        
+                      },
+                      child: Container(
+                        height: 30,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: ColorsContants.iconColor,
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Subscribe",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                       ),
-                      child: Row(
-                        children: [
-                          CustomIconButton(icon: Icons.notifications_off, ontap: () {
-                            
-                          }, size: 14),
-                          SizedBox(width: 5,),
-                          CustomIconButton(icon: Icons.notifications_off, ontap: () {
-                            
-                          }, size: 14),
-                          SizedBox(width: 5,),
-                        ],
-                      ),
-                    )
+                    ),
                   ],
                 ),
               ],
