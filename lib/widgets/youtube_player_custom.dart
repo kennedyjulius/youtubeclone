@@ -18,7 +18,7 @@ class _YoutubePlayerCustomPlayerState extends State<YoutubePlayerCustomPlayer> {
     super.initState();
     _controller = YoutubePlayerController(
         initialVideoId: widget.videoId,
-        flags: YoutubePlayerFlags(autoPlay: true, mute: false))
+        flags: YoutubePlayerFlags(autoPlay: false, mute: false))
       ..addListener(_onPlayerStateChange);
   }
 
@@ -58,12 +58,24 @@ class _YoutubePlayerCustomPlayerState extends State<YoutubePlayerCustomPlayer> {
     return Scaffold(
         body: Stack(
       children: [
-        YoutubePlayer(controller: _controller),
-        Padding(
-          padding: const EdgeInsets.only(left: 8, top: 190),
-          child: Text(
-            subtitleText,
-            style: TextStyle(fontSize: 17, color: Colors.white),
+        YoutubePlayer(
+          controller: _controller,
+          showVideoProgressIndicator: true,
+          progressIndicatorColor: Colors.red,
+          progressColors: ProgressBarColors(
+            playedColor: Colors.redAccent,
+            handleColor: Colors.grey,
+          ),
+          
+        ),
+        Align(
+          alignment: Alignment.bottomLeft,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 8, top: 190),
+            child: Text(
+              "The video playing is a Tutorial",
+              style: TextStyle(fontSize: 17, color: Colors.white),
+            ),
           ),
         )
       ],
