@@ -1,9 +1,13 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class YoutubePlayerCustomPlayer extends StatefulWidget {
-  final String videoId = '0sacQ4oo-P0';
-  const YoutubePlayerCustomPlayer({super.key});
+  final String videoId;
+
+  const YoutubePlayerCustomPlayer({super.key, 
+  required this.videoId});
 
   @override
   State<YoutubePlayerCustomPlayer> createState() =>
@@ -18,7 +22,13 @@ class _YoutubePlayerCustomPlayerState extends State<YoutubePlayerCustomPlayer> {
     super.initState();
     _controller = YoutubePlayerController(
         initialVideoId: widget.videoId,
-        flags: YoutubePlayerFlags(autoPlay: false, mute: false))
+        flags: YoutubePlayerFlags(
+          enableCaption: true,
+          forceHD: true,
+          loop: true,
+          
+          autoPlay: false, 
+          mute: false))
       ..addListener(_onPlayerStateChange);
   }
 
@@ -32,7 +42,6 @@ class _YoutubePlayerCustomPlayerState extends State<YoutubePlayerCustomPlayer> {
 
       // setState(() {
       //   subtitleText = currentSubtitle.text;
-      
     }
   }
 
@@ -44,7 +53,7 @@ class _YoutubePlayerCustomPlayerState extends State<YoutubePlayerCustomPlayer> {
   //   Subtitle(start: 2, end: 10, text: "Animated Container Widget In Flutter"),
   // ];
 
-  String subtitleText = "";
+  //String subtitleText = "";
 
   //disposing
   @override
@@ -56,9 +65,7 @@ class _YoutubePlayerCustomPlayerState extends State<YoutubePlayerCustomPlayer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
-      children: [
-        YoutubePlayer(
+        body: YoutubePlayer(
           controller: _controller,
           showVideoProgressIndicator: true,
           progressIndicatorColor: Colors.red,
@@ -66,19 +73,6 @@ class _YoutubePlayerCustomPlayerState extends State<YoutubePlayerCustomPlayer> {
             playedColor: Colors.redAccent,
             handleColor: Colors.grey,
           ),
-          
-        ),
-        // Align(
-        //   alignment: Alignment.bottomLeft,
-        //   child: Padding(
-        //     padding: const EdgeInsets.only(left: 8, top: 190),
-        //     child: Text(
-        //       "The video playing is a Tutorial",
-        //       style: TextStyle(fontSize: 17, color: Colors.white),
-        //     ),
-        //   ),
-        // )
-      ],
-    ));
+        ));
   }
 }

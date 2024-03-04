@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:youtubeclone/utils/colors.dart';
 import 'package:youtubeclone/widgets/customCircular_avatar.dart';
-import 'package:youtubeclone/widgets/custom_iconbutton.dart';
 import 'package:youtubeclone/widgets/youtube_player_custom.dart';
 
 class VideoCard extends StatefulWidget {
@@ -35,7 +34,7 @@ class _VideoCardState extends State<VideoCard> {
         children: [
           AspectRatio(
             aspectRatio: 16 / 9,
-            child: YoutubePlayerCustomPlayer(),
+            child: YoutubePlayerCustomPlayer(videoId: '0sacQ4oo-P0',),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
