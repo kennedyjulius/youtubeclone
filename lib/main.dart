@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:youtubeclone/screens/home/home_screen.dart';
 import 'package:youtubeclone/widgets/custom_shorts_video.dart';
+import 'package:youtubeclone/widgets/custom_tabbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: HomeScreen(),
+      home: CustomTabBar(),
     );
   }
 }
