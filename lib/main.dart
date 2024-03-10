@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:youtubeclone/screens/home/home_screen.dart';
+import 'package:youtubeclone/widgets/custom_shorts_video.dart';
 
 void main() {
   runApp(const MyApp());
