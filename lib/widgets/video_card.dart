@@ -6,7 +6,7 @@ import 'package:youtubeclone/widgets/customCircular_avatar.dart';
 import 'package:youtubeclone/widgets/youtube_player_custom.dart';
 
 class VideoCard extends StatefulWidget {
-  const VideoCard({Key? key}) : super(key: key);
+  const VideoCard({Key? key, required String videoId}) : super(key: key);
 
   @override
   State<VideoCard> createState() => _VideoCardState();
